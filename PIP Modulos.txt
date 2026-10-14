@@ -1,0 +1,3 @@
+se deben instalar los siguientes modulos:
+
+pip install python-dotenv
