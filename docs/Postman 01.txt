@@ -2,9 +2,9 @@ Cristian Kuljis
 
 POST: https://generativelanguage.googleapis.com/v1beta/interactions
 
-KEY: x-goog-api-key
+Header: KEY: x-goog-api-key
 
-Body:
+Body copiar:
 {
     "model": "gemini-3.5-flash-lite",
     "input": "Hola. Que modelo eres?"
