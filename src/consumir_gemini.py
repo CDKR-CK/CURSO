@@ -1,4 +1,3 @@
-# sin manejo de errores
 # pip install requests python-dotenv
 
 import os
@@ -31,9 +30,6 @@ texto_modelo = datos_respuesta["steps"][-1]["content"][0]["text"]
 
 print("\n")
 print(texto_modelo)
-
-
-
 
 
 
