@@ -1,0 +1,18 @@
+Pregunta: Cual es la capital de Chile? solo debes dar el nombre.
+
+Modelo                   Prueba     Costo US$  Latencia s  Respuesta
+gemini-3.5-flash-lite         1    0,00000700       1,945  Santiago
+gemini-3.5-flash-lite         2    0,00000700       2,152  Santiago
+gemini-3.8-flash              1    0,00045375       4,482  Santiago
+gemini-3.8-flash              2    0,00030375       3,755  Santiago
+gemini-3.6-flash              1    0,00049875       2,681  Santiago
+gemini-3.6-flash              2    0,00044250       2,736  Santiago
+gemini-3.8-live               1             -           -  Error: El servicio respondió con un error 400.
+gemini-3.8-live               2             -           -  Error: El servicio respondió con un error 400.
+
+Modelo                     Costo prom.   Costo total  Latencia prom.  Latencia total
+gemini-3.5-flash-lite       0,00000700    0,00001400           2,049           4,097
+gemini-3.8-flash            0,00037875    0,00075750           4,118           8,237
+gemini-3.6-flash            0,00047063    0,00094125           2,709           5,417
+gemini-3.8-live           Sin pruebas exitosas
+TODOS                       0,00028546    0,00171275           2,959          17,751
