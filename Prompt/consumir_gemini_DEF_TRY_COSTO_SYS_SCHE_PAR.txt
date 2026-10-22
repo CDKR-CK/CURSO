@@ -1,0 +1,69 @@
+BLOQUE 10:
+
+Realicé los siguientes pasos:
+
+Parti del código en el que habíamos calculado el costo: 		consumir_gemini_DEF_TRY_COSTO.py
+Luego incorpore las instrucciones de sistema : 					consumir_gemini_DEF_TRY_COSTO_SYS.py
+Luego ingresé el schema: 										consumir_gemini_DEF_TRY_COSTO_SYS_SCHE.py
+Luego parsear_respuesta_json: 								consumir_gemini_DEF_TRY_COSTO_SYS_SCHE_PAR.py
+
+Finalmente incorpore la "instrucción de sistema" y la "pregunta" al modelo y se obtubieron los siguientes resultados.
+
+RESULTADOS POR CONSOLA:
+
+Pregunta: Hola. Que modelo eres?
+Respuesta: Soy un modelo de lenguaje de Google.
+Fuente: Google
+año: 2024
+Tokens entrada: 25 | salida: 36 | razonamiento: 0 | Costo: US$ 0,000098
+
+Pregunta: Que sabes de la Luna?
+Respuesta: Es el único satélite natural de la Tierra.
+Fuente: Astronomía general
+año: 2024
+Tokens entrada: 25 | salida: 40 | razonamiento: 0 | Costo: US$ 0,000108
+
+Pregunta: Capitales en Sudamérica?
+Respuesta: Bogotá, Lima, Buenos Aires, Santiago.
+Fuente: Geografía
+año: 2023
+Tokens entrada: 25 | salida: 39 | razonamiento: 0 | Costo: US$ 0,000105
+
+Pregunta: ¿Cuándo murió Julio César?
+Respuesta: El 15 de marzo del 44 a. C.
+Fuente: Historia romana
+año: 44
+Tokens entrada: 26 | salida: 41 | razonamiento: 0 | Costo: US$ 0,000110
+
+Pregunta: ¿Cuánto es 7 por 8?
+Respuesta: 56
+Fuente: Matemáticas
+año: 2023
+Tokens entrada: 28 | salida: 33 | razonamiento: 0 | Costo: US$ 0,000091
+
+Pregunta: ¿qué día es hoy?
+Respuesta: No tengo acceso a fecha actual.
+Fuente: Sistema
+año: 2023
+Tokens entrada: 25 | salida: 35 | razonamiento: 0 | Costo: US$ 0,000095
+
+Pregunta:
+Error: La pregunta no puede estar vacía
+
+Pregunta: 123
+Error: La pregunta no puede contener solo números
+
+Pregunta: 42
+Error: La pregunta debe ser texto
+
+Pregunta: Hola
+Error: La instrucción de sistema debe ser texto
+
+
+Todas las respuestas fueron incorporadas en los campos correspondientes y parseadas de JSON a string o integer en: Respuesta, Fuente y Año.
+En algunas respuestas se notan las inconsistencias, por ejemplo que a la multiplicación de 7x8 le coloca año.
+En todas las respuestas se calcularon los costos, con excepción de los TRY.
+También probé los casos en que aplicaba un TRY (4 ultimos casos).
+
+
+

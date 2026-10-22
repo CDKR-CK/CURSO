@@ -1,0 +1,14 @@
+BLOQUE 10:
+
+RESULTADOS POR CONSOLA:
+
+clasificar_sentimiento: 3/3 respuestas válidas
+consulta_modelo: 3/3 respuestas válidas
+consulta_luna: 3/3 respuestas válidas
+consulta_capitales: 3/3 respuestas válidas
+consulta_fecha_historica: 3/3 respuestas válidas
+consulta_calculo: 3/3 respuestas válidas
+consulta_fecha_actual: 3/3 respuestas válidas
+
+
+

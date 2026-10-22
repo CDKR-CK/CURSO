@@ -1,39 +1,34 @@
+# REFACTORIZADO
 # pip install requests python-dotenv
 
 import os
 import requests
-import json
 from dotenv import load_dotenv
 
 load_dotenv()
 
-clave_api = os.getenv("API_KEY")
-  
-url_api = "https://generativelanguage.googleapis.com/v1beta/interactions"
+def armar_peticion(pregunta):
+    api_key = os.getenv("API_KEY")
+    modelo = "gemini-3.5-flash-lite"
+    url = f"https://generativelanguage.googleapis.com/v1beta/interactions?key={api_key}"
+    body = {"model": modelo, "input": pregunta}
+    print(body)
+    print("\n")
+    return url, body
 
-carga_util = json.dumps({
-    "model": "gemini-3.5-flash-lite",
-    "input": "Hola. Que modelo eres?"
-})
+def enviar_peticion(url, body):
+    respuesta = requests.post(url, json=body)
+    return respuesta.json()
 
-encabezados = {
-    "x-goog-api-key": clave_api,
-    "Content-Type": "application/json"
-}
+def extraer_texto(datos):
+    return datos["steps"][-1]["content"][0]["text"]
 
-respuesta = requests.request("POST", url_api, headers=encabezados, data=carga_util)
+def obtener_dato_de_prueba(pregunta):
+    url, body = armar_peticion(pregunta)
+    datos = enviar_peticion(url, body)
+    print(datos)
+    print("\n")
+    return extraer_texto(datos)
 
-print(respuesta)
-print("\n")
-
-print(respuesta.text)
-print("\n")
-
-datos_respuesta = respuesta.json()
-texto_modelo = datos_respuesta["steps"][-1]["content"][0]["text"]
-
-print(texto_modelo)
-
-
-
-
+if __name__ == "__main__":
+    print(obtener_dato_de_prueba("Hola. Que modelo eres?"))

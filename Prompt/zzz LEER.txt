@@ -1,0 +1,19 @@
+BLOQUE 10:
+
+Hola,
+
+Los archivo siguientes, tienen el código y el detalle de lo solicitado en la tarea:
+consumir_gemini_DEF_TRY_COSTO_SYS_SCHE_PAR_PROMP.py
+consumir_gemini_DEF_TRY_COSTO_SYS_SCHE_PAR_PROMP.txt 
+
+El archivo siguiente es el código y el detalle de cada consulta:
+consumir_gemini_DEF_TRY_COSTO_SYS_SCHE_PAR.py
+consumir_gemini_DEF_TRY_COSTO_SYS_SCHE_PAR.txt
+
+
+Son otros archivos. Son archivos de trabajo para llegar a la solución final. Gracias!
+
+
+
+
+
