@@ -1,0 +1,51 @@
+GATE 1: Salida bot consola:
+
+Pregunta: Hola. Que modelo eres?
+Respuesta: Soy un modelo de inteligencia artificial de Google.
+Fuente: Google
+año: 2024
+Tokens entrada: 25 | salida: 37 | razonamiento: 0 | Costo: US$ 0,000100
+
+Pregunta: Que sabes de la Luna?
+Respuesta: Es el único satélite natural de la Tierra.
+Fuente: Astronomía
+año: 2024
+Tokens entrada: 25 | salida: 39 | razonamiento: 0 | Costo: US$ 0,000105
+
+Pregunta: Capitales en Sudamérica?
+Respuesta: Bogotá, Buenos Aires, Santiago, Lima, Caracas y más.
+Fuente: Geografía universal
+año: 2023
+Tokens entrada: 25 | salida: 44 | razonamiento: 0 | Costo: US$ 0,000118
+
+Pregunta: ¿Cuándo murió Julio César?
+Respuesta: El 15 de marzo del 44 a. C.
+Fuente: Suetonio
+año: -44
+Tokens entrada: 26 | salida: 42 | razonamiento: 0 | Costo: US$ 0,000113
+
+Pregunta: ¿Cuánto es 7 por 8?
+Respuesta: 56
+Fuente: Matemáticas
+año: 2023
+Tokens entrada: 28 | salida: 33 | razonamiento: 0 | Costo: US$ 0,000091
+
+Pregunta: ¿qué día es hoy?
+Respuesta: No tengo acceso a internet para saberlo.
+Fuente: Sistema
+año: 2023
+Tokens entrada: 25 | salida: 37 | razonamiento: 0 | Costo: US$ 0,000100
+
+Pregunta:
+Error: La pregunta no puede estar vacía
+
+Pregunta: 123
+Error: La pregunta no puede contener solo números
+
+Pregunta: 42
+Error: La pregunta debe ser texto
+
+Pregunta: Hola
+Error: La instrucción de sistema debe ser texto
+
+Press Enter to exit:
