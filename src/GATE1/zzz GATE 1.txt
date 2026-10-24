@@ -1,0 +1,19 @@
+Hola,
+
+El código solicitado está en main.py y consumir_gemini.py en esta carpeta "src". en subcarpeta "MAS" están las etapas del trabajo paso a paso. 
+
+Diagrama de arquitectura en carpeta "docs", consumir_gemini_DEF_TRY_COSTO_DIAGRAMA.jpg
+
+Banco de pruebas en carpeta "Prompt", consumir_gemini_DEF_TRY_COSTO_SYS_SCHE_PAR_PROMP.py y txt
+
+README.txt en esta capeta "src".
+
+Gracias!
+
+
+
+
+
+
+
+
