@@ -1,6 +1,6 @@
 Hola,
 
-El código solicitado está en main.py y consumir_gemini.py en esta carpeta "src". en subcarpeta "MAS" están las etapas del trabajo paso a paso. 
+El código solicitado está en main.py y consumir_gemini.py en esta carpeta "src". En subcarpeta "MAS" están las etapas del trabajo paso a paso. 
 
 Diagrama de arquitectura en carpeta "docs", consumir_gemini_DEF_TRY_COSTO_DIAGRAMA.jpg
 
