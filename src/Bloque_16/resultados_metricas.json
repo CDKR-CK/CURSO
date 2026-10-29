@@ -1,0 +1,32 @@
+[
+  {
+    "consulta": "¿Qué es Python?",
+    "referencia": "Python es un lenguaje de programación interpretado.",
+    "respuesta": "Pregunta: ¿Qué es Python?\nRespuesta: Un lenguaje de programación versátil, potente y fácil.\n",
+    "metricas": {
+      "precision": 0.46153846153846156,
+      "cobertura": 0.8571428571428571,
+      "f1": 0.6
+    }
+  },
+  {
+    "consulta": "¿Cuándo se creó Python?",
+    "referencia": "Python fue creado en 1991.",
+    "respuesta": "Pregunta: ¿Cuándo se creó Python?\nRespuesta: Python se creó en febrero de 1991.\n",
+    "metricas": {
+      "precision": 0.23076923076923078,
+      "cobertura": 0.6,
+      "f1": 0.33333333333333337
+    }
+  },
+  {
+    "consulta": "¿Qué es una lista en Python?",
+    "referencia": "Una lista es una colección ordenada y modificable.",
+    "respuesta": "Pregunta: ¿Qué es una lista en Python?\nRespuesta: Una colección ordenada y modificable de elementos.\n",
+    "metricas": {
+      "precision": 0.5333333333333333,
+      "cobertura": 1.0,
+      "f1": 0.6956521739130436
+    }
+  }
+]
