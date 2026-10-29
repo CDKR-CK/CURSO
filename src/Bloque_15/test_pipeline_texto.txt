@@ -1,0 +1,50 @@
+CASO 1:
+Pregunta: ¿Qué es Python?
+Respuesta: Un lenguaje de programación versátil, fácil y popular.
+
+['Pregunta:', '¿Qué', 'es', 'Python?', 'Respuesta:', 'Un', 'lenguaje', 'de', 'programación', 'versátil,', 'fácil', 'y', 'popular.']
+{'es', 'programación', 'de', 'lenguaje'}
+[Caso 1] Coincidencia texto crudo: 57.1%
+['python', 'es', 'un', 'lenguaje', 'de', 'programación', 'interpretado']
+['pregunta', 'qué', 'es', 'python', 'respuesta', 'un', 'lenguaje', 'de', 'programación', 'versátil', 'fácil', 'y', 'popular']
+{'es', 'un', 'programación', 'python', 'lenguaje', 'de'}
+[Caso 1] Coincidencia texto procesado: 85.7%
+
+
+CASO 2:
+Pregunta: ¿Cuál es la capital de Chile?
+Respuesta: Santiago de Chile.
+
+['Pregunta:', '¿Cuál', 'es', 'la', 'capital', 'de', 'Chile?', 'Respuesta:', 'Santiago', 'de', 'Chile.']
+set()
+[Caso 2] Coincidencia texto crudo: 0.0%
+['santiago']
+['pregunta', 'cuál', 'es', 'la', 'capital', 'de', 'chile', 'respuesta', 'santiago', 'de', 'chile']
+{'santiago'}
+[Caso 2] Coincidencia texto procesado: 100.0%
+
+
+CASO 3:
+Pregunta: ¿Qué océano tiene Chile?
+Respuesta: Chile tiene el Océano Pacífico.
+
+['Pregunta:', '¿Qué', 'océano', 'tiene', 'Chile?', 'Respuesta:', 'Chile', 'tiene', 'el', 'Océano', 'Pacífico.']
+{'océano', 'Pacífico.'}
+[Caso 3] Coincidencia texto crudo: 66.7%
+['el', 'océano', 'pacífico']
+['pregunta', 'qué', 'océano', 'tiene', 'chile', 'respuesta', 'chile', 'tiene', 'el', 'océano', 'pacífico']
+{'océano', 'pacífico', 'el'}
+[Caso 3] Coincidencia texto procesado: 100.0%
+
+
+CASO 4:
+Pregunta: ¿Cuántos lados tiene un hexágono?
+Respuesta: Un hexágono tiene seis lados.
+
+['Pregunta:', '¿Cuántos', 'lados', 'tiene', 'un', 'hexágono?', 'Respuesta:', 'Un', 'hexágono', 'tiene', 'seis', 'lados.']
+set()
+[Caso 4] Coincidencia texto crudo: 0.0%
+['seis']
+['pregunta', 'cuántos', 'lados', 'tiene', 'un', 'hexágono', 'respuesta', 'un', 'hexágono', 'tiene', 'seis', 'lados']
+{'seis'}
+[Caso 4] Coincidencia texto procesado: 100.0%
