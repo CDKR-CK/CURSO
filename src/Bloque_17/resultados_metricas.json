@@ -1,0 +1,202 @@
+[
+  {
+    "consulta": "¿Quién creó Python?",
+    "referencia": "Python fue creado por Guido van Rossum.",
+    "respuesta": "Python fue creado por Guido van Rossum.",
+    "metricas": {
+      "precision": 1.0,
+      "cobertura": 1.0,
+      "f1": 1.0
+    }
+  },
+  {
+    "consulta": "¿Qué es un módulo en Python?",
+    "referencia": "Un módulo es un archivo con código Python reutilizable.",
+    "respuesta": "Un archivo con código Python reutilizable.",
+    "metricas": {
+      "precision": 1.0,
+      "cobertura": 0.6666666666666666,
+      "f1": 0.8
+    }
+  },
+  {
+    "consulta": "¿Qué es una función en Python?",
+    "referencia": "Una función es un bloque de código reutilizable.",
+    "respuesta": "Un bloque de código reutilizable que realiza una tarea.",
+    "metricas": {
+      "precision": 0.6666666666666666,
+      "cobertura": 0.75,
+      "f1": 0.7058823529411765
+    }
+  },
+  {
+    "consulta": "¿Qué es una lista en Python?",
+    "referencia": "Una lista es una colección ordenada y modificable.",
+    "respuesta": "Una colección ordenada y modificable de elementos.",
+    "metricas": {
+      "precision": 0.7142857142857143,
+      "cobertura": 0.625,
+      "f1": 0.6666666666666666
+    }
+  },
+  {
+    "consulta": "¿Qué es un bucle while en Python?",
+    "referencia": "Un bucle while se repite mientras una condición sea verdadera.",
+    "respuesta": "Repite un bloque de código mientras su condición sea verdadera.",
+    "metricas": {
+      "precision": 0.6,
+      "cobertura": 0.6,
+      "f1": 0.6
+    }
+  },
+  {
+    "consulta": "¿Qué es la indentación en Python?",
+    "referencia": "La indentación son espacios que definen los bloques de código.",
+    "respuesta": "Espacios al inicio de línea que definen bloques de código.",
+    "metricas": {
+      "precision": 0.6,
+      "cobertura": 0.6,
+      "f1": 0.6
+    }
+  },
+  {
+    "consulta": "¿Qué es una clase en Python?",
+    "referencia": "Una clase es una plantilla para crear objetos.",
+    "respuesta": "Una plantilla para crear objetos con atributos y métodos.",
+    "metricas": {
+      "precision": 0.5555555555555556,
+      "cobertura": 0.625,
+      "f1": 0.5882352941176471
+    }
+  },
+  {
+    "consulta": "¿Qué es una cadena de texto en Python?",
+    "referencia": "Una cadena es una secuencia inmutable de caracteres.",
+    "respuesta": "Una secuencia de caracteres entre comillas.",
+    "metricas": {
+      "precision": 0.6666666666666666,
+      "cobertura": 0.5,
+      "f1": 0.5714285714285715
+    }
+  },
+  {
+    "consulta": "¿Qué es pip en Python?",
+    "referencia": "Pip es el gestor de paquetes de Python.",
+    "respuesta": "El gestor de paquetes oficial para instalar librerías en Python.",
+    "metricas": {
+      "precision": 0.5,
+      "cobertura": 0.625,
+      "f1": 0.5555555555555556
+    }
+  },
+  {
+    "consulta": "¿Para qué sirve la función len en Python?",
+    "referencia": "La función len devuelve la longitud de un objeto.",
+    "respuesta": "Para medir la longitud de un objeto en Python.",
+    "metricas": {
+      "precision": 0.5555555555555556,
+      "cobertura": 0.5555555555555556,
+      "f1": 0.5555555555555556
+    }
+  },
+  {
+    "consulta": "¿Qué es Python?",
+    "referencia": "Python es un lenguaje de programación interpretado.",
+    "respuesta": "Un lenguaje de programación versátil, potente y fácil.",
+    "metricas": {
+      "precision": 0.5,
+      "cobertura": 0.5714285714285714,
+      "f1": 0.5333333333333333
+    }
+  },
+  {
+    "consulta": "¿Qué es una tupla en Python?",
+    "referencia": "Una tupla es una colección ordenada e inmutable.",
+    "respuesta": "Una secuencia ordenada e inmutable de elementos.",
+    "metricas": {
+      "precision": 0.5714285714285714,
+      "cobertura": 0.5,
+      "f1": 0.5333333333333333
+    }
+  },
+  {
+    "consulta": "¿Cuándo se creó Python?",
+    "referencia": "Python fue creado en 1991.",
+    "respuesta": "Python se creó en el año 1991.",
+    "metricas": {
+      "precision": 0.42857142857142855,
+      "cobertura": 0.6,
+      "f1": 0.5
+    }
+  },
+  {
+    "consulta": "¿Qué es un diccionario en Python?",
+    "referencia": "Un diccionario es una colección de pares clave valor.",
+    "respuesta": "Una colección de pares clave-valor desordenada y modificable.",
+    "metricas": {
+      "precision": 0.5,
+      "cobertura": 0.4444444444444444,
+      "f1": 0.47058823529411764
+    }
+  },
+  {
+    "consulta": "¿Qué es un conjunto en Python?",
+    "referencia": "Un conjunto es una colección no ordenada de elementos únicos.",
+    "respuesta": "Colección desordenada de elementos únicos y sin duplicados.",
+    "metricas": {
+      "precision": 0.5,
+      "cobertura": 0.4,
+      "f1": 0.4444444444444445
+    }
+  },
+  {
+    "consulta": "¿Para qué sirve la palabra def en Python?",
+    "referencia": "La palabra def sirve para definir una función.",
+    "respuesta": "Sirve para definir y crear funciones nuevas.",
+    "metricas": {
+      "precision": 0.42857142857142855,
+      "cobertura": 0.375,
+      "f1": 0.39999999999999997
+    }
+  },
+  {
+    "consulta": "¿Para qué sirve la función print en Python?",
+    "referencia": "La función print muestra información en la pantalla.",
+    "respuesta": "Para mostrar texto o datos en la pantalla.",
+    "metricas": {
+      "precision": 0.375,
+      "cobertura": 0.375,
+      "f1": 0.375
+    }
+  },
+  {
+    "consulta": "¿Qué es un bucle for en Python?",
+    "referencia": "Un bucle for recorre los elementos de una secuencia.",
+    "respuesta": "Una estructura para repetir un bloque de código.",
+    "metricas": {
+      "precision": 0.375,
+      "cobertura": 0.3333333333333333,
+      "f1": 0.35294117647058826
+    }
+  },
+  {
+    "consulta": "¿Para qué sirve try except en Python?",
+    "referencia": "Try except sirve para capturar y manejar excepciones.",
+    "respuesta": "Para manejar errores y evitar que el programa falle.",
+    "metricas": {
+      "precision": 0.3333333333333333,
+      "cobertura": 0.375,
+      "f1": 0.35294117647058826
+    }
+  },
+  {
+    "consulta": "¿Qué es una excepción en Python?",
+    "referencia": "Una excepción es un error que ocurre durante la ejecución.",
+    "respuesta": "Un error que interrumpe el flujo del programa.",
+    "metricas": {
+      "precision": 0.375,
+      "cobertura": 0.3,
+      "f1": 0.33333333333333326
+    }
+  }
+]

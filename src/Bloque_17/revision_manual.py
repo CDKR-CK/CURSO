@@ -1,0 +1,154 @@
+import json
+
+revision_manual = [
+
+    # Los 5 casos con F1 más alto
+    {
+        "Pregunta": "¿Quién creó Python?",
+        "Referencia": "Python fue creado por Guido van Rossum.",
+        "Respuesta": "Python fue creado por Guido van Rossum.",
+        "f1": 1.00,
+        "correccion_factual": "si",
+        "completitud": "si",
+        "contradiccion": "no",
+        "Comentario": (
+            "la respuesta repite la referencia palabra por palabra; "
+            "el F1 perfecto es merecido"
+        ),
+    },
+    {
+        "Pregunta": "¿Qué es un módulo en Python?",
+        "Referencia": "Un módulo es un archivo con código Python reutilizable.",
+        "Respuesta": "Un archivo con código Python reutilizable.",
+        "f1": 0.80,
+        "correccion_factual": "si",
+        "completitud": "si",
+        "contradiccion": "no",
+        "Comentario": (
+            "respuesta correcta; omite 'un módulo es', que ya está "
+            "implícito en la pregunta"
+        ),
+    },
+    {
+        "Pregunta": "¿Qué es una función en Python?",
+        "Referencia": "Una función es un bloque de código reutilizable.",
+        "Respuesta": "Un bloque de código reutilizable que realiza una tarea.",
+        "f1": 0.71,
+        "correccion_factual": "si",
+        "completitud": "si",
+        "contradiccion": "no",
+        "Comentario": (
+            "respuesta correcta; agrega 'que realiza una tarea', "
+            "información adicional correcta"
+        ),
+    },
+    {
+        "Pregunta": "¿Qué es una lista en Python?",
+        "Referencia": "Una lista es una colección ordenada y modificable.",
+        "Respuesta": "Una colección ordenada y modificable de elementos.",
+        "f1": 0.67,
+        "correccion_factual": "si",
+        "completitud": "si",
+        "contradiccion": "no",
+        "Comentario": (
+            "respuesta correcta; agrega 'de elementos', que la métrica "
+            "cuenta como palabras de más"
+        ),
+    },
+    {
+        "Pregunta": "¿Qué es un bucle while en Python?",
+        "Referencia": "Un bucle while se repite mientras una condición sea verdadera.",
+        "Respuesta": "Repite un bloque de código mientras su condición sea verdadera.",
+        "f1": 0.60,
+        "correccion_factual": "si",
+        "completitud": "si",
+        "contradiccion": "no",
+        "Comentario": (
+            "respuesta correcta; no repite 'bucle while' (ya está en la "
+            "pregunta), usa 'su' en vez de 'una' y agrega 'un bloque de "
+            "código'"
+        ),
+    },
+
+    # Los 5 casos con F1 más bajo
+    {
+        "Pregunta": "¿Para qué sirve la palabra def en Python?",
+        "Referencia": "La palabra def sirve para definir una función.",
+        "Respuesta": "Sirve para definir y crear funciones nuevas.",
+        "f1": 0.40,
+        "correccion_factual": "si",
+        "completitud": "si",
+        "contradiccion": "no",
+        "Comentario": (
+            "respuesta correcta; 'funciones' no coincide con 'función' "
+            "porque la métrica no reconoce variaciones de una misma "
+            "palabra (falso negativo)"
+        ),
+    },
+    {
+        "Pregunta": "¿Para qué sirve la función print en Python?",
+        "Referencia": "La función print muestra información en la pantalla.",
+        "Respuesta": "Para mostrar texto o datos en la pantalla.",
+        "f1": 0.38,
+        "correccion_factual": "si",
+        "completitud": "si",
+        "contradiccion": "no",
+        "Comentario": (
+            "respuesta correcta; 'mostrar' no coincide con 'muestra' ni "
+            "'datos' con 'información' (falso negativo)"
+        ),
+    },
+    {
+        "Pregunta": "¿Qué es un bucle for en Python?",
+        "Referencia": "Un bucle for recorre los elementos de una secuencia.",
+        "Respuesta": "Una estructura para repetir un bloque de código.",
+        "f1": 0.35,
+        "correccion_factual": "si",
+        "completitud": "no",
+        "contradiccion": "no",
+        "Comentario": (
+            "respuesta genérica: no dice que recorre los elementos de una "
+            "secuencia y podría describir un while; el F1 bajo es merecido"
+        ),
+    },
+    {
+        "Pregunta": "¿Para qué sirve try except en Python?",
+        "Referencia": "Try except sirve para capturar y manejar excepciones.",
+        "Respuesta": "Para manejar errores y evitar que el programa falle.",
+        "f1": 0.35,
+        "correccion_factual": "si",
+        "completitud": "parcialmente",
+        "contradiccion": "no",
+        "Comentario": (
+            "dice 'manejar errores' pero no menciona 'capturar'; 'errores' "
+            "es sinónimo de 'excepciones' y la métrica no lo reconoce"
+        ),
+    },
+    {
+        "Pregunta": "¿Qué es una excepción en Python?",
+        "Referencia": "Una excepción es un error que ocurre durante la ejecución.",
+        "Respuesta": "Un error que interrumpe el flujo del programa.",
+        "f1": 0.33,
+        "correccion_factual": "si",
+        "completitud": "parcialmente",
+        "contradiccion": "no",
+        "Comentario": (
+            "es correcta, pero no dice explícitamente 'durante la "
+            "ejecución'"
+        ),
+    },
+
+]
+
+# Ordena de mayor a menor F1
+revision_manual.sort(key=lambda caso: caso["f1"], reverse=True)
+
+with open(
+    "revision_manual.json", "w", encoding="utf-8"
+) as archivo:
+
+    json.dump(
+        revision_manual, archivo, indent=2, ensure_ascii=False
+    )
+
+print(f"revision_manual.json guardado con {len(revision_manual)} casos.")
