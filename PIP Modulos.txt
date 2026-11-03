@@ -2,8 +2,7 @@ Python 3.14.8
 
 se deben instalar los siguientes modulos:
 
-pip install requests python-dotenv pytest
-
+pip install requests python-dotenv pytest langchain langchain-google-genai
 
 
 

@@ -1,0 +1,14 @@
+[
+    {
+        "titulo": "Embeddings",
+        "texto": "Los embeddings convierten palabras, frases o documentos en listas de números llamadas vectores. Estos vectores representan el significado del texto, de modo que conceptos parecidos quedan cerca unos de otros en un espacio matemático. Gracias a esto, un sistema puede comparar textos por su sentido y no solo por las palabras exactas que contienen."
+    },
+    {
+        "titulo": "Ventana de contexto",
+        "texto": "La ventana de contexto es la cantidad máxima de tokens que un modelo de lenguaje puede considerar al mismo tiempo, sumando la pregunta del usuario y la respuesta que genera. Si una conversación supera ese límite, el modelo deja de ver la información más antigua. Por eso, los textos muy largos suelen dividirse en partes más pequeñas antes de procesarlos."
+    },
+    {
+        "titulo": "RAG (generación aumentada por recuperación)",
+        "texto": "La generación aumentada por recuperación, conocida como RAG, permite que un modelo de lenguaje responda usando documentos externos. Primero, el sistema busca los fragmentos más relevantes para la pregunta en una base de datos. Luego, entrega esos fragmentos al modelo junto con la pregunta, para que la respuesta se base en información actualizada y verificable."
+    }
+]
