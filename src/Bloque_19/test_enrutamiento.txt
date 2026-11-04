@@ -1,0 +1,22 @@
+pytest test_enrutamiento.py -v
+
+============================================================================================= test session starts ==============================================================================================
+
+cachedir: .pytest_cache
+rootdir: D:\DiscoX\CURSO-CLA\19
+plugins: anyio-4.16.0, langsmith-0.14.17
+collected 5 items
+
+test_enrutamiento.py::test_enrutamiento_va_a_cadena_queja PASSED                                                                                                                                          [ 20%]
+test_enrutamiento.py::test_enrutamiento_va_a_cadena_pregunta PASSED                                                                                                                                       [ 40%]
+test_enrutamiento.py::test_enrutamiento_va_a_cadena_sugerencia PASSED                                                                                                                                     [ 60%]
+test_enrutamiento.py::test_enrutamiento_va_a_cadena_default PASSED                                                                                                                                        [ 80%]
+test_enrutamiento.py::test_clasificacion_normaliza_antes_de_comparar PASSED                                                                                                                               [100%]
+
+=============================================================================================== warnings summary ===============================================================================================
+Python\Lib\site-packages\langsmith\_internal\_beta_decorator.py:92: 13 warnings
+  Python\Lib\site-packages\langsmith\_internal\_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================================================================================== 5 passed, 13 warnings in 4.22s ========================================================================================
