@@ -1,0 +1,29 @@
+PowerShell 7.6.9: pytest test_orquestacion.py -v
+
+
+================================================= test session starts =================================================
+cachedir: .pytest_cache
+plugins: anyio-4.16.0, langsmith-0.14.17
+collected 9 items
+
+test_orquestacion.py::test_clasificacion_normaliza_antes_de_comparar PASSED                                      [ 11%]
+test_orquestacion.py::test_enrutamiento_va_a_cadena_queja PASSED                                                 [ 22%]
+test_orquestacion.py::test_enrutamiento_va_a_cadena_pregunta PASSED                                              [ 33%]
+test_orquestacion.py::test_enrutamiento_va_a_cadena_sugerencia PASSED                                            [ 44%]
+test_orquestacion.py::test_enrutamiento_usa_default_ante_categoria_desconocida PASSED                            [ 55%]
+test_orquestacion.py::test_cadena_queja_usa_fallback_ante_fallo_del_modelo PASSED                                [ 66%]
+test_orquestacion.py::test_cadena_pregunta_usa_fallback_ante_fallo_del_modelo PASSED                             [ 77%]
+test_orquestacion.py::test_cadena_sugerencia_usa_fallback_ante_fallo_del_modelo PASSED                           [ 88%]
+test_orquestacion.py::test_procesar_mensaje_seguro_no_propaga_excepciones PASSED                                 [100%]
+
+================================================== warnings summary ===================================================
+Python\Lib\site-packages\langsmith\_internal\_beta_decorator.py:92: 13 warnings
+  Python\Lib\site-packages\langsmith\_internal\_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================================== 9 passed, 13 warnings in 0.90s ============================================
+
+
+
+
