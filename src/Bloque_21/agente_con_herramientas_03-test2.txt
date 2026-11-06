@@ -1,0 +1,55 @@
+> Entering new AgentExecutor chain...
+
+Invoking: `buscar_en_politicas` with `{'consulta': 'mani alérgenos ingredientes bombones'}`
+
+
+Todos los productos contienen leche y soya. Se elaboran en una planta que procesa maní y frutos secos, por lo que pueden contener trazas de ambos.[{'type': 'text', 'text': 'Nuestros bombones se elaboran en una planta que procesa maní y frutos secos, por lo que pueden contener trazas de maní. Además, todos nuestros productos contienen leche y soya.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TMbf75mp2IX6Iz9qs9whQokN34bTAMnF8n1b7BOUzn/hfa4X+dPxwSikGBTD1n91KhKc5it0jSSPg7AY/5rzxKmtyyMpX6AsnDOFtqQfqDQRxmjr1BJ4H9MU='}}]
+
+> Finished chain.
+Nuestros bombones se elaboran en una planta que procesa maní y frutos secos, por lo que pueden contener trazas de maní. Además, todos nuestros productos contienen leche y soya.
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `consultar_estado_pedido` with `{'numero_pedido': 'CH-1001'}`
+
+
+En tránsito, llega en 2 días hábiles. Contiene 2 cajas de trufas.[{'type': 'text', 'text': 'Tu pedido CH-1001 (que contiene 2 cajas de trufas) se encuentra actualmente en tránsito y llegará en 2 días hábiles.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0Tz0Z7ep9zCTZhREdL6kgkJfrQC099aUhmzT9SzHh1TycBnrrtDVScgOf80fgopzC8I+7oDwPReGf9Tfhi6/s/16MB/lnfIp8+Gv0sL3TY4QCALdmwwlbpBH8='}}]
+
+> Finished chain.
+Tu pedido CH-1001 (que contiene 2 cajas de trufas) se encuentra actualmente en tránsito y llegará en 2 días hábiles.
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `calcular_total_compra` with `{'producto': 'cajas de trufas', 'cantidad': 3}`
+
+
+3 x caja de trufas a $12.900 cada una: total $38.700.[{'type': 'text', 'text': '3 cajas de trufas cuestan en total $38.700 (cada una a $12.900).', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TVnSHCPm1c/L02fOZeG97abjygAmkjeM73adBFJFJmROq8/Fxe83PkLGGfL67A6IYH4mWQM2dUM9cQTzH+CS/GqGqZWo5V/aqa8l/zAJub4pjMpyIRKTxZLM='}}]
+
+> Finished chain.
+3 cajas de trufas cuestan en total $38.700 (cada una a $12.900).
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `consultar_estado_pedido` with `{'numero_pedido': 'CH-1001'}`
+
+
+En tránsito, llega en 2 días hábiles. Contiene 2 cajas de trufas.
+Invoking: `calcular_total_compra` with `{'cantidad': 2, 'producto': 'cajas de trufas'}`
+
+
+2 x caja de trufas a $12.900 cada una: total $25.800.[{'type': 'text', 'text': 'Para repetir tu pedido CH-1001 (que contiene 2 cajas de trufas), el costo total sería de **$25.800** ($12.900 cada caja). \n\n¿Te gustaría que te ayude a realizar este nuevo pedido?', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TXIRl+RfZG6gpjFqCqTiC6xn1Fiw77xwdNhjY4Vl6DARhoof9GjSs5MxbXsgcEIL+WaxFdY0QXxFtn3oVChjhCm4BK6X1ldQIE2E/bTWsCphuEz/fVxvGYsw='}}]
+
+> Finished chain.
+Para repetir tu pedido CH-1001 (que contiene 2 cajas de trufas), el costo total sería de **$25.800** ($12.900 cada caja).
+
+¿Te gustaría que te ayude a realizar este nuevo pedido?
+
+
+> Entering new AgentExecutor chain...
+[{'type': 'text', 'text': 'Lo siento, no dispongo de información sobre los datos de contacto de soporte.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TCpV1Lki8XpGxoVlZM4PEw+nFTCHv241x3QkQN65piyKyMRPc7+Z9dlW9sLYYy1MnX090yXcT14MnCLT0qLHBdesDqyeA+b84YkvzEV94YGEEeAHfK7I52FQ='}}]
+
+> Finished chain.
+Lo siento, no dispongo de información sobre los datos de contacto de soporte.
