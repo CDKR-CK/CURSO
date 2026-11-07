@@ -1,0 +1,132 @@
+> Entering new AgentExecutor chain...
+
+Invoking: `consultar_estado_pedido` with `{'numero_pedido': 'CH-1001'}`
+
+
+En tránsito, llega en 2 días hábiles. Contiene 2 cajas de trufas.[{'type': 'text', 'text': 'Tu pedido CH-1001 se encuentra actualmente **en tránsito** y llegará en **2 días hábiles**. \n\nContiene **2 cajas de trufas**.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0T/s5j6fo4alvbbekh7iIQdCx2B31Sy/JzMSJdCRw5bwFEocMlz8/tJreF2Pj0V2rJDacAlNP1NNA85lvQ804l2W8rhlHqhNuiRFzEf8EeoFMjcQ41XdauI2M='}}]
+
+> Finished chain.
+
+--- Sesión cliente_01 | Turno 1 ---
+Cliente: ¿Dónde está mi pedido CH-1001?
+Agente: Tu pedido CH-1001 se encuentra actualmente **en tránsito** y llegará en **2 días hábiles**.
+
+Contiene **2 cajas de trufas**.
+Herramientas: ['consultar_estado_pedido']
+Mensajes en el historial: 2
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `consultar_estado_pedido` with `{'numero_pedido': 'CH-1001'}`
+
+
+En tránsito, llega en 2 días hábiles. Contiene 2 cajas de trufas.[{'type': 'text', 'text': 'El pedido CH-1001 incluye **2 cajas de trufas**.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TMWFuamNTl9NhhBJfLDCCX9nhZbAZnHKsuJxVcUQuJaVI8S7iHxDDc9Oo2rnZn0frpfCVI5N2O4xP6XL1+9NNpAdJsh7bd1wHayO7a2F0/lJ7vV2zKA1KK9k='}}]
+
+> Finished chain.
+
+--- Sesión cliente_01 | Turno 2 ---
+Cliente: ¿Qué productos incluye ese pedido?
+Agente: El pedido CH-1001 incluye **2 cajas de trufas**.
+Herramientas: ['consultar_estado_pedido']
+Mensajes en el historial: 4
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `calcular_total_compra` with `{'producto': 'trufas', 'cantidad': 4}`
+
+
+4 x caja de trufas a $12.900 cada una: total $51.600.[{'type': 'text', 'text': 'Comprar el doble (4 cajas de trufas) te costaría **$51.600** en total ($12.900 cada una).', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TrYOfK7gBlcUkDcFabq9Sr6BGiEcWBXOL3wNCyqhd7w/knlc0Wb2IFiwrGMYcnyrLrfwUqRXGIlivMhGd61Zu6CQa4FH/KGAGHwhwd80dJcZuoqNa6YxGK/Q='}}]
+
+> Finished chain.
+
+--- Sesión cliente_01 | Turno 3 ---
+Cliente: ¿Cuánto me costaría comprar el doble de lo que traía?
+Agente: Comprar el doble (4 cajas de trufas) te costaría **$51.600** en total ($12.900 cada una).
+Herramientas: ['calcular_total_compra']
+Mensajes en el historial: 6
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `buscar_en_politicas` with `{'consulta': 'conservacion duracion trufas'}`
+
+
+Los chocolates se guardan entre 15 °C y 18 °C, lejos de la luz y la humedad. Duran 6 meses; las trufas, 30 días.[{'type': 'text', 'text': 'Las cajas de trufas se deben conservar entre 15 °C y 18 °C, en un lugar fresco y seco, lejos de la luz y la humedad. \n\nEn cuanto a su duración, las trufas tienen una vida útil de **30 días**.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TsYdmImaXsOFoJgArvMUethTruQmEwVEOzCuE3Ez/fKqppKOjoUbfnelCUjxHTfei/xS7c7XHAtKBAlfZaAscpVpBllc8hAlO5sTK7txWikn9cq2kzT1Y+Sc='}}]
+
+> Finished chain.
+
+--- Sesión cliente_01 | Turno 4 ---
+Cliente: ¿Cómo debo guardar esas cajas y cuánto duran?
+Agente: Las cajas de trufas se deben conservar entre 15 °C y 18 °C, en un lugar fresco y seco, lejos de la luz y la humedad.
+
+En cuanto a su duración, las trufas tienen una vida útil de **30 días**.
+Herramientas: ['buscar_en_politicas']
+Mensajes en el historial: 8
+
+
+> Entering new AgentExecutor chain...
+[{'type': 'text', 'text': 'No tengo memoria de nuestra conversación anterior, así que no sé por qué pedido me preguntaste antes. Si me das el número de tu pedido (por ejemplo, CH-1001), con gusto puedo consultarlo para ti.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TWcwzii3UEW1NBPorY+aayyICvFSVpjDSLWIw/4fN3+7HR+UXuB41FxZ7TQmL83Nw+DlWrzVPJFq3HjMu8PF1LxbSBUW1RyfHADc5eDGQ1BFnk65t+wdGV3w='}}]
+
+> Finished chain.
+
+--- Sesión cliente_02 | Turno 1 ---
+Cliente: ¿Por qué pedido te pregunté antes?
+Agente: No tengo memoria de nuestra conversación anterior, así que no sé por qué pedido me preguntaste antes. Si me das el número de tu pedido (por ejemplo, CH-1001), con gusto puedo consultarlo para ti.
+Herramientas: ninguna
+Mensajes en el historial: 2
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `buscar_en_politicas` with `{'consulta': 'bombones mani alergenos ingredientes'}`
+
+
+Todos los productos contienen leche y soya. Se elaboran en una planta que procesa maní y frutos secos, por lo que pueden contener trazas de ambos.[{'type': 'text', 'text': 'Las cajas de bombones contienen leche y soya. Además, se elaboran en una planta que procesa maní y frutos secos, por lo que **pueden contener trazas de maní**.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TyrHh758AhE1M5DMjDmj9epQmTgEc/lwWs90cGjbHxUvjgbMi+H/w+pgevE2xm/ETrwdxRBD+QNOFN9wn10d907k5zgJmqnHgXxo37PxngmEDas9xfOASKCo='}}]
+
+> Finished chain.
+
+--- Sesión cliente_02 | Turno 2 ---
+Cliente: Me interesan las cajas de bombones. ¿Contienen maní?
+Agente: Las cajas de bombones contienen leche y soya. Además, se elaboran en una planta que procesa maní y frutos secos, por lo que **pueden contener trazas de maní**.
+Herramientas: ['buscar_en_politicas']
+Mensajes en el historial: 4
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `calcular_total_compra` with `{'producto': 'bombones', 'cantidad': 3}`
+
+
+3 x caja de bombones surtidos a $9.900 cada una: total $29.700.[{'type': 'text', 'text': 'Si compras 3 cajas de bombones surtidos, el total sería de **$29.700** ($9.900 cada una).', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TtpZ1jVKb16X+EIDDPrNxLSzKzW13q839QQSjT24B5KI8HgAZ0N/soul/GU4VYjKXBPEbghJcvegByFAuDWILhURCBCjr2M+AD0Ss9mzOj2iBHlcociB5Pfo='}}]
+
+> Finished chain.
+
+--- Sesión cliente_02 | Turno 3 ---
+Cliente: Si compro 3 de esas cajas, ¿cuánto pagaría?
+Agente: Si compras 3 cajas de bombones surtidos, el total sería de **$29.700** ($9.900 cada una).
+Herramientas: ['calcular_total_compra']
+Mensajes en el historial: 6
+
+
+> Entering new AgentExecutor chain...
+
+Invoking: `buscar_en_politicas` with `{'consulta': 'despacho gratis'}`
+
+
+Los despachos tardan 2 días hábiles en la Región Metropolitana y de 3 a 5 días hábiles en otras regiones. Son gratis en compras desde $30.000.[{'type': 'text', 'text': 'Para tener despacho gratis necesitas compras desde **$30.000**. \n\nComo el total de tus 3 cajas de bombones es **$29.700**, te faltan **$300** para alcanzar el beneficio de despacho gratis.', 'index': 0, 'extras': {'signature': 'EmAKXgFpFH0TgSis922+79YkjNuZTeKnQ6wp3uLCgMQ5LrdK1/dBJHrGRv1iWfYp9j+TZECctO3IeFtbNYw/W7b6PYQTf+KO4cB0QHtXfSIAe83IiuOX1iymuMlCthMIa4s='}}]
+
+> Finished chain.
+
+--- Sesión cliente_02 | Turno 4 ---
+Cliente: ¿Cuánto me falta con esa compra para tener despacho gratis?
+Agente: Para tener despacho gratis necesitas compras desde **$30.000**.
+
+Como el total de tus 3 cajas de bombones es **$29.700**, te faltan **$300** para alcanzar el beneficio de despacho gratis.
+Herramientas: ['buscar_en_politicas']
+Mensajes en el historial: 8
+
+--- Resumen de sesiones ---
+cliente_01: 8 mensajes
+cliente_02: 8 mensajes

@@ -1,6 +1,7 @@
 langchain-classic==1.0.8
 langchain-google-genai==4.4.2
 langchain==1.4.8
+pydantic==2.14.2
 pytest==9.2.0
 python-dotenv==1.2.4
 requests==2.34.2

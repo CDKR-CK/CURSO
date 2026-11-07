@@ -1,8 +1,8 @@
 Python 3.14.8
 
-se deben instalar los siguientes modulos:
+se deben instalar los siguientes modulos para todo el desarrollo del curso:
 
-pip install requests python-dotenv pytest langchain langchain-google-genai langchain-classic
+pip install requests python-dotenv pytest langchain langchain-google-genai langchain-classic pydantic
 
 
 
