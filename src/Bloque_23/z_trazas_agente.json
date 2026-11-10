@@ -1,0 +1,208 @@
+[
+  {
+    "timestamp": "2026-11-10T00:38:20.341158+00:00",
+    "session_id": "cliente_01",
+    "entrada": "¿Dónde está mi pedido CH-1001?",
+    "acciones": [
+      {
+        "herramienta": "consultar_estado_pedido",
+        "argumentos": {
+          "numero_pedido": "CH-1001"
+        },
+        "observacion": "En tránsito, llega en 2 días hábiles. Contiene 2 cajas de trufas."
+      }
+    ],
+    "aprobaciones": [],
+    "respuesta_final": "Tu pedido CH-1001 se encuentra actualmente **en tránsito** y llegará en **2 días hábiles**. \n\nRecuerda que contiene **2 cajas de trufas**."
+  },
+  {
+    "timestamp": "2026-11-10T00:38:22.002073+00:00",
+    "session_id": "cliente_01",
+    "entrada": "¿Cuánto me costaría comprar 2 cajas de trufas?",
+    "acciones": [
+      {
+        "herramienta": "calcular_total_compra",
+        "argumentos": {
+          "cantidad": 2,
+          "producto": "trufas"
+        },
+        "observacion": "2 x caja de trufas a $12.900 cada una: total $25.800."
+      }
+    ],
+    "aprobaciones": [],
+    "respuesta_final": "Comprar 2 cajas de trufas te costaría **$25.800** en total ($12.900 cada una)."
+  },
+  {
+    "timestamp": "2026-11-10T00:38:23.987175+00:00",
+    "session_id": "cliente_01",
+    "entrada": "¿Las cajas de bombones contienen maní?",
+    "acciones": [
+      {
+        "herramienta": "buscar_en_politicas",
+        "argumentos": {
+          "consulta": "maní alérgenos bombones ingredientes"
+        },
+        "observacion": "Todos los productos contienen leche y soya. Se elaboran en una planta que procesa maní y frutos secos, por lo que pueden contener trazas de ambos."
+      }
+    ],
+    "aprobaciones": [],
+    "respuesta_final": "Los bombones **pueden contener trazas de maní**, ya que se elaboran en una planta que procesa tanto maní como frutos secos. Además, ten en cuenta que todos nuestros productos contienen leche y soya."
+  },
+  {
+    "timestamp": "2026-11-10T00:38:25.977620+00:00",
+    "session_id": "cliente_02",
+    "entrada": "Mi pedido CH-1002 llegó con la caja de bombones rota. Genera un reembolso de $9.900 para ese pedido.",
+    "acciones": [
+      {
+        "herramienta": "generar_reembolso",
+        "argumentos": {
+          "numero_pedido": "CH-1002",
+          "monto": 9900
+        },
+        "observacion": "Reembolso de $9.900 generado para el pedido CH-1002."
+      }
+    ],
+    "aprobaciones": [
+      {
+        "herramienta": "generar_reembolso",
+        "argumentos": {
+          "numero_pedido": "CH-1002",
+          "monto": 9900
+        },
+        "aprobado": true,
+        "momento": "2026-11-09T21:38:25.078638"
+      }
+    ],
+    "respuesta_final": "El reembolso de $9.900 para el pedido CH-1002 ha sido generado con éxito. Queda pendiente de aprobación humana para completarse."
+  },
+  {
+    "timestamp": "2026-11-10T00:38:27.872552+00:00",
+    "session_id": "cliente_03",
+    "entrada": "Genera un reembolso de $25.000 para el pedido CH-1003.",
+    "acciones": [
+      {
+        "herramienta": "generar_reembolso",
+        "argumentos": {
+          "monto": 25000,
+          "numero_pedido": "CH-1003"
+        },
+        "observacion": "Reembolso no aprobado por el supervisor humano."
+      }
+    ],
+    "aprobaciones": [
+      {
+        "herramienta": "generar_reembolso",
+        "argumentos": {
+          "numero_pedido": "CH-1003",
+          "monto": 25000
+        },
+        "aprobado": false,
+        "momento": "2026-11-09T21:38:26.827040"
+      }
+    ],
+    "respuesta_final": "El reembolso de $25.000 para el pedido CH-1003 no fue aprobado por el supervisor humano, por lo que no se pudo procesar."
+  },
+  {
+    "timestamp": "2026-11-10T00:40:57.967840+00:00",
+    "session_id": "cliente_01",
+    "entrada": "¿Dónde está mi pedido CH-1001?",
+    "acciones": [
+      {
+        "herramienta": "consultar_estado_pedido",
+        "argumentos": {
+          "numero_pedido": "CH-1001"
+        },
+        "observacion": "En tránsito, llega en 2 días hábiles. Contiene 2 cajas de trufas."
+      }
+    ],
+    "aprobaciones": [],
+    "respuesta_final": "El estado de tu pedido CH-1001 es: En tránsito, llega en 2 días hábiles. Contiene 2 cajas de trufas."
+  },
+  {
+    "timestamp": "2026-11-10T00:40:59.808042+00:00",
+    "session_id": "cliente_01",
+    "entrada": "¿Cuánto me costaría comprar 2 cajas de trufas?",
+    "acciones": [
+      {
+        "herramienta": "calcular_total_compra",
+        "argumentos": {
+          "cantidad": 2,
+          "producto": "trufas"
+        },
+        "observacion": "2 x caja de trufas a $12.900 cada una: total $25.800."
+      }
+    ],
+    "aprobaciones": [],
+    "respuesta_final": "El total de comprar 2 cajas de trufas es de $25.800 ($12.900 cada una)."
+  },
+  {
+    "timestamp": "2026-11-10T00:41:02.200752+00:00",
+    "session_id": "cliente_01",
+    "entrada": "¿Las cajas de bombones contienen maní?",
+    "acciones": [
+      {
+        "herramienta": "buscar_en_politicas",
+        "argumentos": {
+          "consulta": "bombones maní alérgenos ingredientes"
+        },
+        "observacion": "Todos los productos contienen leche y soya. Se elaboran en una planta que procesa maní y frutos secos, por lo que pueden contener trazas de ambos."
+      }
+    ],
+    "aprobaciones": [],
+    "respuesta_final": "Todos nuestros productos contienen leche y soya. Además, se elaboran en una planta que procesa maní y frutos secos, por lo que pueden contener trazas de ambos."
+  },
+  {
+    "timestamp": "2026-11-10T00:41:04.015816+00:00",
+    "session_id": "cliente_02",
+    "entrada": "Mi pedido CH-1002 llegó con la caja de bombones rota. Genera un reembolso de $9.900 para ese pedido.",
+    "acciones": [
+      {
+        "herramienta": "generar_reembolso",
+        "argumentos": {
+          "monto": 9900,
+          "numero_pedido": "CH-1002"
+        },
+        "observacion": "Reembolso de $9.900 generado para el pedido CH-1002."
+      }
+    ],
+    "aprobaciones": [
+      {
+        "herramienta": "generar_reembolso",
+        "argumentos": {
+          "numero_pedido": "CH-1002",
+          "monto": 9900
+        },
+        "aprobado": true,
+        "momento": "2026-11-09T21:41:03.081922"
+      }
+    ],
+    "respuesta_final": "El reembolso de $9.900 ha sido generado para el pedido CH-1002."
+  },
+  {
+    "timestamp": "2026-11-10T00:41:05.508415+00:00",
+    "session_id": "cliente_03",
+    "entrada": "Genera un reembolso de $25.000 para el pedido CH-1003.",
+    "acciones": [
+      {
+        "herramienta": "generar_reembolso",
+        "argumentos": {
+          "monto": 25000,
+          "numero_pedido": "CH-1003"
+        },
+        "observacion": "Reembolso no aprobado por el supervisor humano."
+      }
+    ],
+    "aprobaciones": [
+      {
+        "herramienta": "generar_reembolso",
+        "argumentos": {
+          "numero_pedido": "CH-1003",
+          "monto": 25000
+        },
+        "aprobado": false,
+        "momento": "2026-11-09T21:41:04.723670"
+      }
+    ],
+    "respuesta_final": "El reembolso para el pedido CH-1003 no fue aprobado por el supervisor humano."
+  }
+]
