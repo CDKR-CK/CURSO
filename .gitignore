@@ -19,3 +19,11 @@ Thumbs.db
 
 # Logs
 *.log
+
+# CHROMA
+/chroma_db
+
+# Base de vectores generada
+vectorstore/
+
+

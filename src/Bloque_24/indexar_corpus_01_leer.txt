@@ -1,0 +1,9 @@
+python indexar_corpus_01_leer.py
+
+
+Registros en la base recargada: 5
+- chunk_0: El cliente reintenta hasta 3 veces ante un TimeoutError, con espera creciente.
+- chunk_1: Los errores de autenticacion nunca se reintentan: fallan de inmediato con un ValueError.
+- chunk_2: El costo de cada llamada se calcula a partir de totalTokenCount y la tarifa vigente por cada 1000 tokens.
+- chunk_3: El agente de la Unidad 2.4 decide por si mismo que herramienta usar, segun la descripcion de cada una.
+- chunk_4: Las pruebas unitarias del cliente usan mocks, de forma que la suite completa corre en menos de un segundo.

@@ -1,0 +1,5 @@
+python indexar_corpus_01.py
+
+
+Indexados 5 chunks en \src\Bloque_24\vectorstore
+Registros en la base recargada: 5
