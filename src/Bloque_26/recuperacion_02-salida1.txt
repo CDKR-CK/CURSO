@@ -1,0 +1,108 @@
+python recuperacion_02.py
+
+Indexados 5 chunks en D:\DiscoX\GIT\CURSO\src\Bloque_26\vectorstore, con metadata e ids
+
+================================================================================
+PREGUNTA: que pasa si mi conexion tarda demasiado
+================================================================================
+Responde la pregunta usando SOLO el contexto de abajo. Cita la fuente de cada afirmacion con su numero entre corchetes, como [1]. Si el contexto no alcanza para responder, dilo explicitamente en vez de inventar.
+
+Contexto:
+[1] El cliente reintenta hasta 3 veces ante un TimeoutError, con espera creciente.
+
+[2] Los errores de autenticacion nunca se reintentan: fallan de inmediato con un ValueError.
+
+[3] Las pruebas unitarias del cliente usan mocks, de forma que la suite completa corre en menos de un segundo.
+
+Pregunta: que pasa si mi conexion tarda demasiado
+
+Respuesta:
+
+Mapa de citas: {1: 'doc0.md', 2: 'doc1.md', 3: 'doc4.md'}
+
+Validación del prompt:
+  ✅ citas tiene exactamente k=3 entradas con claves 1..3
+  ✅ ningún valor de citas es 'desconocida'
+  ✅ el prompt contiene la pregunta exacta en 'Pregunta: ...'
+  ✅ el contexto tiene un bloque [N] por chunk, consecutivos desde 1
+
+Respuesta del modelo:
+Si tu conexión tarda demasiado (lo que genera un TimeoutError), el cliente reintenta hasta 3 veces con espera creciente [1]. Si el contexto no alcanzara para responder, se diría explícitamente.
+  Cita [1]: doc0.md
+
+================================================================================
+PREGUNTA: cuanto cuesta cada llamada al modelo
+================================================================================
+Responde la pregunta usando SOLO el contexto de abajo. Cita la fuente de cada afirmacion con su numero entre corchetes, como [1]. Si el contexto no alcanza para responder, dilo explicitamente en vez de inventar.
+
+Contexto:
+[1] El costo de cada llamada se calcula a partir de totalTokenCount y la tarifa vigente por cada 1000 tokens.
+
+[2] El cliente reintenta hasta 3 veces ante un TimeoutError, con espera creciente.
+
+[3] El agente de la Unidad 2.4 decide por si mismo que herramienta usar, segun la descripcion de cada una.
+
+Pregunta: cuanto cuesta cada llamada al modelo
+
+Respuesta:
+
+Mapa de citas: {1: 'doc2.md', 2: 'doc0.md', 3: 'doc3.md'}
+
+Validación del prompt:
+  ✅ citas tiene exactamente k=3 entradas con claves 1..3
+  ✅ ningún valor de citas es 'desconocida'
+  ✅ el prompt contiene la pregunta exacta en 'Pregunta: ...'
+  ✅ el contexto tiene un bloque [N] por chunk, consecutivos desde 1
+
+Respuesta del modelo:
+El costo de cada llamada se calcula a partir de totalTokenCount y la tarifa vigente por cada 1000 tokens [1].
+  Cita [1]: doc2.md
+
+================================================================================
+PREGUNTA: que base de datos usa la aplicacion para guardar a los usuarios
+================================================================================
+Responde la pregunta usando SOLO el contexto de abajo. Cita la fuente de cada afirmacion con su numero entre corchetes, como [1]. Si el contexto no alcanza para responder, dilo explicitamente en vez de inventar.
+
+Contexto:
+[1] El agente de la Unidad 2.4 decide por si mismo que herramienta usar, segun la descripcion de cada una.
+
+[2] Los errores de autenticacion nunca se reintentan: fallan de inmediato con un ValueError.
+
+[3] El costo de cada llamada se calcula a partir de totalTokenCount y la tarifa vigente por cada 1000 tokens.
+
+Pregunta: que base de datos usa la aplicacion para guardar a los usuarios
+
+Respuesta:
+
+Mapa de citas: {1: 'doc3.md', 2: 'doc1.md', 3: 'doc2.md'}
+
+Validación del prompt:
+  ✅ citas tiene exactamente k=3 entradas con claves 1..3
+  ✅ ningún valor de citas es 'desconocida'
+  ✅ el prompt contiene la pregunta exacta en 'Pregunta: ...'
+  ✅ el contexto tiene un bloque [N] por chunk, consecutivos desde 1
+
+Respuesta del modelo:
+El contexto no alcanza para responder la pregunta sobre qué base de datos usa la aplicación para guardar a los usuarios.
+
+================================================================================
+RESUMEN DE PRUEBAS
+================================================================================
+
+1) El contexto recuperado cambia entre dos preguntas distintas:
+  Pregunta 1 -> ['doc0.md', 'doc1.md', 'doc4.md']
+  Pregunta 2 -> ['doc2.md', 'doc0.md', 'doc3.md']
+  ✅ la recuperación depende de la pregunta (el chunk más relevante: doc0.md vs doc2.md)
+
+4 requisitos del prompt en todas las preguntas:
+  ✅ validación del prompt
+
+2) Pregunta que el corpus no puede responder:
+  Respuesta: El contexto no alcanza para responder la pregunta sobre qué base de datos usa la aplicación para guardar a los usuarios.
+  ✅ el modelo admite que no tiene información suficiente
+
+3) Verificación de la cita [1] de una respuesta real (pregunta 1):
+  Cita [1] -> doc0.md
+  Texto de doc0.md: El cliente reintenta hasta 3 veces ante un TimeoutError, con espera creciente.
+  Palabras en común con la respuesta: cliente, creciente, espera, hasta, reintenta, timeouterror, veces
+  ✅ la fuente citada respalda la respuesta (revísalo también a simple vista)

@@ -24,6 +24,4 @@ Thumbs.db
 /chroma_db
 
 # Base de vectores generada
-vectorstore/
-
-
+vectorstore*/
