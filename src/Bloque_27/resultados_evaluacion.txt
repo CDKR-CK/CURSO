@@ -1,0 +1,58 @@
+Fecha: 13/11/2026 - 22:26:43
+Configuracion: k=3, chunk_size=200, chunk_overlap=30, modelo=models/gemini-embedding-001, casos=10
+
+prec  recall  F1    recuperados                 relevantes      pregunta
+0,33    1,00  0,50  doc1,doc5,doc2              doc1            cuantos dias demora el despacho a regiones
+0,33    1,00  0,50  doc2,doc1,doc3              doc2            puedo devolver un producto si ya lo abri
+0,33    1,00  0,50  doc3,doc6,doc7              doc3            los chocolates pueden tener mani
+0,33    1,00  0,50  doc4,doc3,doc7              doc4            a que temperatura debo guardar los chocolates
+0,33    1,00  0,50  doc5,doc6,doc1              doc5            donde va mi pedido CH-1001
+0,33    1,00  0,50  doc6,doc5,doc8              doc6            que traia el pedido CH-1002 que ya me entregaron
+0,33    1,00  0,50  doc9,doc7,doc8              doc9            cuanto cuesta una barra de chocolate amargo
+0,33    1,00  0,50  doc10,doc7,doc8             doc10           precio de la caja de alfajores
+0,67    1,00  0,80  doc7,doc4,doc5              doc4,doc7       cuanto duran las trufas y cuanto vale la caja
+0,00     n/a   n/a  doc1,doc2,doc7              (ninguno)       tienen tienda fisica en Valparaiso
+
+promedio -> precision: 0,333  recall: 1,000  F1: 0,500
+
+Trade-off de k (mismo ranking recortado):
+k=1: precision=0,900  recall=0,944  F1=0,922  <- mejor F1
+k=2: precision=0,500  recall=1,000  F1=0,667
+k=3: precision=0,333  recall=1,000  F1=0,500
+k=4: precision=0,250  recall=1,000  F1=0,400
+k=5: precision=0,200  recall=1,000  F1=0,333
+
+Comprobaciones:
+  ✅ cada precisión y recall está entre 0 y 1
+  ℹ️  hay casos con más de un relevante: recall >= precisión no es obligatorio
+  ✅ ningún caso con respuesta quedó con recall 0
+
+====================================================================================================
+Fecha: 13/11/2026 - 22:26:57
+Configuracion: k=5, chunk_size=200, chunk_overlap=30, modelo=models/gemini-embedding-001, casos=10
+
+prec  recall  F1    recuperados                 relevantes      pregunta
+0,20    1,00  0,33  doc1,doc5,doc2,doc10,doc7   doc1            cuantos dias demora el despacho a regiones
+0,20    1,00  0,33  doc2,doc1,doc3,doc10,doc7   doc2            puedo devolver un producto si ya lo abri
+0,20    1,00  0,33  doc3,doc6,doc7,doc8,doc5    doc3            los chocolates pueden tener mani
+0,20    1,00  0,33  doc4,doc3,doc7,doc5,doc9    doc4            a que temperatura debo guardar los chocolates
+0,20    1,00  0,33  doc5,doc6,doc1,doc2,doc8    doc5            donde va mi pedido CH-1001
+0,20    1,00  0,33  doc6,doc5,doc8,doc7,doc10   doc6            que traia el pedido CH-1002 que ya me entregaron
+0,20    1,00  0,33  doc9,doc7,doc8,doc10,doc3   doc9            cuanto cuesta una barra de chocolate amargo
+0,20    1,00  0,33  doc10,doc7,doc8,doc3,doc9   doc10           precio de la caja de alfajores
+0,40    1,00  0,57  doc7,doc4,doc5,doc8,doc10   doc4,doc7       cuanto duran las trufas y cuanto vale la caja
+0,00     n/a   n/a  doc1,doc2,doc7,doc10,doc3   (ninguno)       tienen tienda fisica en Valparaiso
+
+promedio -> precision: 0,200  recall: 1,000  F1: 0,333
+
+Trade-off de k (mismo ranking recortado):
+k=1: precision=0,900  recall=0,944  F1=0,922  <- mejor F1
+k=2: precision=0,500  recall=1,000  F1=0,667
+k=3: precision=0,333  recall=1,000  F1=0,500
+k=4: precision=0,250  recall=1,000  F1=0,400
+k=5: precision=0,200  recall=1,000  F1=0,333
+
+Comprobaciones:
+  ✅ cada precisión y recall está entre 0 y 1
+  ℹ️  hay casos con más de un relevante: recall >= precisión no es obligatorio
+  ✅ ningún caso con respuesta quedó con recall 0
