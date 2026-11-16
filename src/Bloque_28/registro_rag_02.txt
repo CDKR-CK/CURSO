@@ -1,0 +1,144 @@
+CONSOLA:
+python registro_rag_02.py
+
+
+Indexados 10 chunks en D:\DiscoX\GIT\CURSO\src\Bloque_28\vectorstore
+
+======================================================================
+PASO 1: registrando 3 consultas distintas (Cómo se prueba, chequeo 1)
+======================================================================
+{
+  "timestamp": "2026-11-16T23:17:46.124621+00:00",
+  "pregunta": "cuantos dias demora el despacho a regiones?",
+  "k": 3,
+  "tiempos_ms": {
+    "embed_query": 374.55,
+    "busqueda_vectorial": 1.86,
+    "generacion": 1563.35
+  },
+  "tiempo_total_ms": 1939.77,
+  "tokens": {
+    "input_tokens": 183,
+    "output_tokens": 18,
+    "total_tokens": 201,
+    "input_token_details": {
+      "cache_read": 0
+    }
+  }
+}
+Respuesta del modelo:
+El despacho a otras regiones demora de 3 a 5 días hábiles [1].
+
+{
+  "timestamp": "2026-11-16T23:17:47.153307+00:00",
+  "pregunta": "los chocolates pueden tener mani?",
+  "k": 3,
+  "tiempos_ms": {
+    "embed_query": 367.96,
+    "busqueda_vectorial": 1.9,
+    "generacion": 658.13
+  },
+  "tiempo_total_ms": 1027.99,
+  "tokens": {
+    "input_tokens": 160,
+    "output_tokens": 28,
+    "total_tokens": 188,
+    "input_token_details": {
+      "cache_read": 0
+    }
+  }
+}
+Respuesta del modelo:
+Sí, los productos se elaboran en una planta que procesa maní, por lo que pueden contener trazas de este [1].
+
+{
+  "timestamp": "2026-11-16T23:17:48.234539+00:00",
+  "pregunta": "cuanto duran las trufas y cuanto vale la caja?",
+  "k": 3,
+  "tiempos_ms": {
+    "embed_query": 344.3,
+    "busqueda_vectorial": 1.39,
+    "generacion": 726.66
+  },
+  "tiempo_total_ms": 1072.35,
+  "tokens": {
+    "input_tokens": 179,
+    "output_tokens": 27,
+    "total_tokens": 206,
+    "input_token_details": {
+      "cache_read": 0
+    }
+  }
+}
+Respuesta del modelo:
+Las trufas duran 30 días [2] y la caja vale $12.900 [1].
+
+
+======================================================================
+PASO 2: misma pregunta con k=3 y k=6 (Cómo se prueba, chequeo 2)
+======================================================================
+{
+  "timestamp": "2026-11-16T23:17:49.348056+00:00",
+  "pregunta": "cuanto duran las trufas y cuanto vale la caja?",
+  "k": 3,
+  "tiempos_ms": {
+    "embed_query": 359.0,
+    "busqueda_vectorial": 1.9,
+    "generacion": 751.82
+  },
+  "tiempo_total_ms": 1112.72,
+  "tokens": {
+    "input_tokens": 179,
+    "output_tokens": 31,
+    "total_tokens": 210,
+    "input_token_details": {
+      "cache_read": 0
+    }
+  }
+}
+Respuesta del modelo:
+Las trufas duran 30 días [2] y la caja de trufas vale $12.900 [1].
+
+{
+  "timestamp": "2026-11-16T23:17:50.367975+00:00",
+  "pregunta": "cuanto duran las trufas y cuanto vale la caja?",
+  "k": 6,
+  "tiempos_ms": {
+    "embed_query": 338.91,
+    "busqueda_vectorial": 1.57,
+    "generacion": 678.81
+  },
+  "tiempo_total_ms": 1019.3,
+  "tokens": {
+    "input_tokens": 265,
+    "output_tokens": 31,
+    "total_tokens": 296,
+    "input_token_details": {
+      "cache_read": 0
+    }
+  }
+}
+Respuesta del modelo:
+Las trufas duran 30 días [2] y la caja de trufas vale $12.900 [1].
+
+k=3 -> input_tokens: 179
+k=6 -> input_tokens: 265
+✅ input_tokens creció al subir k (179 -> 265, +86)
+
+======================================================================
+PASO 3: confirmando el archivo de registros y la etapa más lenta (chequeo 3)
+======================================================================
+✅ registros_latencia_costo.jsonl tiene 5 líneas (5 nuevas en esta corrida, una por consulta)
+✅ cada línea nueva es un JSON completo con las 6 claves
+
+Tiempos por etapa (ms):
+ k   embed_query   busqueda   generacion       total  pregunta
+ 3        374,55       1,86     1.563,35    1.939,77  cuantos dias demora el despacho a regiones?
+ 3        367,96       1,90       658,13    1.027,99  los chocolates pueden tener mani?
+ 3        344,30       1,39       726,66    1.072,35  cuanto duran las trufas y cuanto vale la caja?
+ 3        359,00       1,90       751,82    1.112,72  cuanto duran las trufas y cuanto vale la caja?
+ 6        338,91       1,57       678,81    1.019,30  cuanto duran las trufas y cuanto vale la caja?
+
+✅ 'generacion' es la etapa más lenta en las 5 consultas
+
+Corrida terminada: 16/11/2026 - 20:17:50 (hora de Chile). Revisa el historial con: python leer_registros_00.py
