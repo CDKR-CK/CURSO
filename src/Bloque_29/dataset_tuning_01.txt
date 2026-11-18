@@ -1,0 +1,36 @@
+=== Paso 1: dataset ===
+18 ejemplos construidos
+output='{"intencion": "estado_pedido", "prioridad": "media"}' text_input='Hola, ¿en qué va mi pedido CH-1001? Lo compré hace una semana.'
+
+=== Paso 2: balance ===
+Balance por 'intencion':
+  estado_pedido: 3
+  cotizacion: 3
+  reembolso: 3
+  alergenos: 3
+  despacho: 3
+  conservacion: 3
+  razón máx/mín: 1,0x
+Balance por 'prioridad':
+  baja: 8
+  media: 5
+  alta: 5
+  razón máx/mín: 1,6x
+
+=== Paso 3: validación ===
+18 ejemplos, 0 problemas encontrados
+✅ Dataset listo
+
+=== Paso 3b: prueba del validador con dataset roto ===
+22 ejemplos, 7 problemas encontrados
+ - ejemplo 18: text_input vacio
+ - ejemplo 18: output no tiene la clave "prioridad"
+ - ejemplo 19: text_input duplicado
+ - ejemplo 19: output no es JSON valido
+ - ejemplo 20: output no es JSON valido
+ - ejemplo 21: intencion "devolucion" no permitida
+ - ejemplo 21: prioridad "urgente" no permitida
+
+=== Paso 4: trabajo de tuning ===
+Configuración construida: modo=TuningMode.TUNING_MODE_PEFT_ADAPTER, adapter=AdapterSize.ADAPTER_SIZE_FOUR, épocas=5
+Envío desactivado (ENVIAR_TRABAJO = False): no se llamó a la API.
