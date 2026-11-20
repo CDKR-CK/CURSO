@@ -1,0 +1,13 @@
+{"ts": "2026-11-19T23:22:36", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-prueba-001", "evento": "consumo_llm", "input_tokens": 210, "output_tokens": 18, "total_tokens": 228}
+{"ts": "2026-11-19T23:22:36", "level": "INFO", "msg": "consulta recibida", "trace_id": "trace-6ef75c4c", "evento": "consulta_recibida", "pregunta_len": 43, "pregunta_huella": "b175e07a600a"}
+{"ts": "2026-11-19T23:22:36", "level": "INFO", "msg": "documentos recuperados", "trace_id": "trace-6ef75c4c", "evento": "documentos_recuperados", "n_documentos": 4, "fuentes": ["doc1", "comentario-ticket-881", "doc5", "doc2"]}
+{"ts": "2026-11-19T23:22:36", "level": "WARNING", "msg": "documento descartado por inyeccion", "trace_id": "trace-6ef75c4c", "evento": "documento_descartado_por_inyeccion", "fuente": "comentario-ticket-881", "n_patrones": 3}
+{"ts": "2026-11-19T23:22:36", "level": "INFO", "msg": "contexto filtrado", "trace_id": "trace-6ef75c4c", "evento": "contexto_filtrado", "n_limpios": 3, "n_descartados": 1}
+{"ts": "2026-11-19T23:22:37", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-6ef75c4c", "evento": "consumo_llm", "input_tokens": 256, "output_tokens": 19, "total_tokens": 275}
+{"ts": "2026-11-19T23:22:37", "level": "INFO", "msg": "respuesta generada", "trace_id": "trace-6ef75c4c", "evento": "respuesta_generada", "respuesta_len": 65}
+{"ts": "2026-11-19T23:22:37", "level": "INFO", "msg": "consulta recibida", "trace_id": "trace-4f188e26", "evento": "consulta_recibida", "pregunta_len": 46, "pregunta_huella": "6f9950ba25a9"}
+{"ts": "2026-11-19T23:22:38", "level": "INFO", "msg": "documentos recuperados", "trace_id": "trace-4f188e26", "evento": "documentos_recuperados", "n_documentos": 4, "fuentes": ["doc7", "resena-web-042", "doc4", "doc5"]}
+{"ts": "2026-11-19T23:22:38", "level": "WARNING", "msg": "documento descartado por inyeccion", "trace_id": "trace-4f188e26", "evento": "documento_descartado_por_inyeccion", "fuente": "resena-web-042", "n_patrones": 1}
+{"ts": "2026-11-19T23:22:38", "level": "INFO", "msg": "contexto filtrado", "trace_id": "trace-4f188e26", "evento": "contexto_filtrado", "n_limpios": 3, "n_descartados": 1}
+{"ts": "2026-11-19T23:22:39", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-4f188e26", "evento": "consumo_llm", "input_tokens": 252, "output_tokens": 33, "total_tokens": 285}
+{"ts": "2026-11-19T23:22:39", "level": "INFO", "msg": "respuesta generada", "trace_id": "trace-4f188e26", "evento": "respuesta_generada", "respuesta_len": 72}

@@ -1,0 +1,50 @@
+Entorno activado: D:\DiscoX\GIT\CURSO\venv
+Python en uso    : D:\DiscoX\GIT\CURSO\venv\Scripts\python.exe
+
+(CURSO\venv - Python 3.14.10) PS D:\DiscoX\GIT\CURSO> cd D:\DiscoX\GIT\CURSO\src\Bloque_31
+(CURSO\venv - Python 3.14.10) PS D:\DiscoX\GIT\CURSO\src\Bloque_31> python logging_rag_02.py
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Indexados 12 documentos en D:\DiscoX\GIT\CURSO\src\Bloque_31\vectorstore
+
+======================================================================
+PRUEBA 2: registro de consumo con AIMessage simulado
+======================================================================
+{"ts": "2026-11-19T23:22:36", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-prueba-001", "evento": "consumo_llm", "input_tokens": 210, "output_tokens": 18, "total_tokens": 228}
+
+======================================================================
+CONSULTA REAL: cuantos dias demora el despacho a regiones?
+======================================================================
+{"ts": "2026-11-19T23:22:36", "level": "INFO", "msg": "consulta recibida", "trace_id": "trace-6ef75c4c", "evento": "consulta_recibida", "pregunta_len": 43, "pregunta_huella": "b175e07a600a"}
+{"ts": "2026-11-19T23:22:36", "level": "INFO", "msg": "documentos recuperados", "trace_id": "trace-6ef75c4c", "evento": "documentos_recuperados", "n_documentos": 4, "fuentes": ["doc1", "comentario-ticket-881", "doc5", "doc2"]}
+{"ts": "2026-11-19T23:22:36", "level": "WARNING", "msg": "documento descartado por inyeccion", "trace_id": "trace-6ef75c4c", "evento": "documento_descartado_por_inyeccion", "fuente": "comentario-ticket-881", "n_patrones": 3}
+{"ts": "2026-11-19T23:22:36", "level": "INFO", "msg": "contexto filtrado", "trace_id": "trace-6ef75c4c", "evento": "contexto_filtrado", "n_limpios": 3, "n_descartados": 1}
+{"ts": "2026-11-19T23:22:37", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-6ef75c4c", "evento": "consumo_llm", "input_tokens": 256, "output_tokens": 19, "total_tokens": 275}
+{"ts": "2026-11-19T23:22:37", "level": "INFO", "msg": "respuesta generada", "trace_id": "trace-6ef75c4c", "evento": "respuesta_generada", "respuesta_len": 65}
+
+Respuesta del modelo:
+El despacho a otras regiones demora de 3 a 5 días hábiles [doc1].
+
+======================================================================
+CONSULTA REAL: cuanto duran las trufas y cuanto vale la caja?
+======================================================================
+{"ts": "2026-11-19T23:22:37", "level": "INFO", "msg": "consulta recibida", "trace_id": "trace-4f188e26", "evento": "consulta_recibida", "pregunta_len": 46, "pregunta_huella": "6f9950ba25a9"}
+{"ts": "2026-11-19T23:22:38", "level": "INFO", "msg": "documentos recuperados", "trace_id": "trace-4f188e26", "evento": "documentos_recuperados", "n_documentos": 4, "fuentes": ["doc7", "resena-web-042", "doc4", "doc5"]}
+{"ts": "2026-11-19T23:22:38", "level": "WARNING", "msg": "documento descartado por inyeccion", "trace_id": "trace-4f188e26", "evento": "documento_descartado_por_inyeccion", "fuente": "resena-web-042", "n_patrones": 1}
+{"ts": "2026-11-19T23:22:38", "level": "INFO", "msg": "contexto filtrado", "trace_id": "trace-4f188e26", "evento": "contexto_filtrado", "n_limpios": 3, "n_descartados": 1}
+{"ts": "2026-11-19T23:22:39", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-4f188e26", "evento": "consumo_llm", "input_tokens": 252, "output_tokens": 33, "total_tokens": 285}
+{"ts": "2026-11-19T23:22:39", "level": "INFO", "msg": "respuesta generada", "trace_id": "trace-4f188e26", "evento": "respuesta_generada", "respuesta_len": 72}
+
+Respuesta del modelo:
+Las trufas duran 30 días [doc4] y la caja de trufas vale $12.900 [doc7].
+
+======================================================================
+RESUMEN DE VERIFICACIONES
+======================================================================
+✅ prueba 1 (trace-6ef75c4c): descartó ['comentario-ticket-881']; ningún texto inyectado llegó al prompt
+✅ prueba 1 (trace-4f188e26): descartó ['resena-web-042']; ningún texto inyectado llegó al prompt
+✅ prueba 2/4: las respuestas reales traen usage_metadata
+✅ prueba 3: trace_id distintos ['trace-6ef75c4c', 'trace-4f188e26'] y fuera de las consultas vale None
+
+Logs guardados en: D:\DiscoX\GIT\CURSO\src\Bloque_31\logging_rag_02.jsonl
+(CURSO\venv - Python 3.14.10) PS D:\DiscoX\GIT\CURSO\src\Bloque_31>

@@ -1,0 +1,39 @@
+(CURSO\venv - Python 3.14.10) PS D:\DiscoX\GIT\CURSO\src\Bloque_31> python logging_rag_01.py
+
+======================================================================
+PRUEBA 1: filtro de inyección (1 limpio + 1 inyectado)
+======================================================================
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "consulta recibida", "trace_id": "trace-64f28cc0", "evento": "consulta_recibida", "pregunta_len": 43, "pregunta_huella": "b175e07a600a"}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "documentos recuperados", "trace_id": "trace-64f28cc0", "evento": "documentos_recuperados", "n_documentos": 2, "fuentes": ["doc1", "comentario-ticket-881"]}
+{"ts": "2026-11-19T23:24:43", "level": "WARNING", "msg": "documento descartado por inyeccion", "trace_id": "trace-64f28cc0", "evento": "documento_descartado_por_inyeccion", "fuente": "comentario-ticket-881", "n_patrones": 3}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "contexto filtrado", "trace_id": "trace-64f28cc0", "evento": "contexto_filtrado", "n_limpios": 1, "n_descartados": 1}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-64f28cc0", "evento": "consumo_llm", "input_tokens": 157, "output_tokens": 20, "total_tokens": 177}
+✅ se descartó solo el comentario inyectado y no llegó al prompt
+
+======================================================================
+PRUEBA 2: registro de consumo con AIMessage simulado
+======================================================================
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-prueba-001", "evento": "consumo_llm", "input_tokens": 210, "output_tokens": 18, "total_tokens": 228}
+✅ revisa arriba: input_tokens 210, output_tokens 18, total_tokens 228
+
+======================================================================
+PRUEBA 3: aislamiento del trace_id entre dos consultas
+======================================================================
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "consulta recibida", "trace_id": "trace-f6482744", "evento": "consulta_recibida", "pregunta_len": 43, "pregunta_huella": "b175e07a600a"}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "documentos recuperados", "trace_id": "trace-f6482744", "evento": "documentos_recuperados", "n_documentos": 3, "fuentes": ["doc1", "doc5", "comentario-ticket-881"]}
+{"ts": "2026-11-19T23:24:43", "level": "WARNING", "msg": "documento descartado por inyeccion", "trace_id": "trace-f6482744", "evento": "documento_descartado_por_inyeccion", "fuente": "comentario-ticket-881", "n_patrones": 3}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "contexto filtrado", "trace_id": "trace-f6482744", "evento": "contexto_filtrado", "n_limpios": 2, "n_descartados": 1}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-f6482744", "evento": "consumo_llm", "input_tokens": 180, "output_tokens": 20, "total_tokens": 200}
+
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "consulta recibida", "trace_id": "trace-5be76b0d", "evento": "consulta_recibida", "pregunta_len": 46, "pregunta_huella": "6f9950ba25a9"}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "documentos recuperados", "trace_id": "trace-5be76b0d", "evento": "documentos_recuperados", "n_documentos": 3, "fuentes": ["doc4", "doc7", "resena-web-042"]}
+{"ts": "2026-11-19T23:24:43", "level": "WARNING", "msg": "documento descartado por inyeccion", "trace_id": "trace-5be76b0d", "evento": "documento_descartado_por_inyeccion", "fuente": "resena-web-042", "n_patrones": 1}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "contexto filtrado", "trace_id": "trace-5be76b0d", "evento": "contexto_filtrado", "n_limpios": 2, "n_descartados": 1}
+{"ts": "2026-11-19T23:24:43", "level": "INFO", "msg": "consumo registrado", "trace_id": "trace-5be76b0d", "evento": "consumo_llm", "input_tokens": 168, "output_tokens": 20, "total_tokens": 188}
+
+✅ trace_id distintos (trace-f6482744 / trace-5be76b0d) y fuera de la consulta vale None
+
+======================================================================
+PRUEBA 4 (opcional): flujo real con Gemini -> no se ejecuta en este script
+======================================================================
+(CURSO\venv - Python 3.14.10) PS D:\DiscoX\GIT\CURSO\src\Bloque_31>
