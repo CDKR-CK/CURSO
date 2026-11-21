@@ -1,0 +1,28 @@
+python Paso_03_matriz_riesgos_01.py
+
+CRITICO  (16) - Inyección de prompt vía reseña o comentario de ticket indexado [AL LIMITE]
+ALTO     (12) - Precio o promoción inventada en la respuesta (ej. caja de trufas gratis) [AL LIMITE]
+ALTO     (10) - Respuesta omite trazas de maní y frutos secos a cliente alérgico [AL LIMITE]
+ALTO     ( 9) - Precio desactualizado por chunk no reindexado tras cambio de precio [AL LIMITE]
+MEDIO    ( 8) - Pregunta o datos del pedido (CH-1001) guardados en logs sin redactar [AL LIMITE]
+MEDIO    ( 6) - Modelo de embeddings queda deprecado sin aviso [AL LIMITE]
+BAJO     ( 3) - Versión nueva del prompt cambia el tono de las respuestas sin aviso [AL LIMITE]
+
+revisar con otra persona: Inyección de prompt vía reseña o comentario de ticket indexado
+revisar con otra persona: Precio o promoción inventada en la respuesta (ej. caja de trufas gratis)
+revisar con otra persona: Respuesta omite trazas de maní y frutos secos a cliente alérgico
+revisar con otra persona: Precio desactualizado por chunk no reindexado tras cambio de precio
+revisar con otra persona: Pregunta o datos del pedido (CH-1001) guardados en logs sin redactar
+revisar con otra persona: Modelo de embeddings queda deprecado sin aviso
+revisar con otra persona: Versión nueva del prompt cambia el tono de las respuestas sin aviso
+
+✅ al menos 5 riesgos: 7
+✅ al menos un CRITICO o ALTO: 4
+✅ todo ALTO/CRITICO tiene punto de supervision
+✅ mitigaciones con numero de bloque: 7
+✅ no todo en la misma categoria: ['ALTO', 'BAJO', 'CRITICO', 'MEDIO']
+
+CRITICO  -> Documento marcado por el filtro frena la respuesta y pasa a revision humana
+ALTO     -> Respuesta que menciona descuento o 'gratis' sin fuente pasa a revision
+ALTO     -> Preguntas sobre alergenos se derivan a una persona antes de responder
+ALTO     -> Cambio de precio aprobado por una persona antes de reindexar

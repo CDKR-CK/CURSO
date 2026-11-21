@@ -1,0 +1,17 @@
+se entrega:
+
+Paso_01_registro_prompts_00.py
+Paso_02_grafo_supervision_00.txt
+
+Paso_02_grafo_supervision_00.py
+Paso_02_grafo_supervision_00.txt
+
+Paso_03_matriz_riesgos_00.py
+Paso_03_matriz_riesgos_00.txt
+
+NOTA:
+Paso 1: registra cada cambio del prompt.
+Paso 2: exige que una persona apruebe una versión antes de activarla.
+Paso 3: ordena los riesgos para decidir dónde poner atención primero.
+
+

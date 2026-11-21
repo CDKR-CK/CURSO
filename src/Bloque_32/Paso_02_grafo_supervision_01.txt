@@ -1,0 +1,13 @@
+Paso_02_grafo_supervision_01.py
+
+nodo proponer: huella propuesta 81542226d725
+1) tras invocar: {'huella_nueva': '81542226d725', 'aprobado': False, '__interrupt__': [Interrupt(value={'motivo': 'aprobar nueva version de prompt en produccion', 'huella_propuesta': '81542226d725'}, id='60738f180ba5bce816de838af21dc793', response_schema=None)]}
+   trae __interrupt__ (despliegue pendiente)? True
+2) siguiente nodo: ('supervisar',)
+   pendiente: {'motivo': 'aprobar nueva version de prompt en produccion', 'huella_propuesta': '81542226d725'}
+version 81542226d725 activada
+3) tras aprobar: {'huella_nueva': '81542226d725', 'aprobado': True}
+
+nodo proponer: huella propuesta 81542226d725
+version 81542226d725 rechazada, se mantiene la anterior
+4) tras rechazar: {'huella_nueva': '81542226d725', 'aprobado': False}
