@@ -1,0 +1,21 @@
+{"ts": "2026-11-24T19:41:49", "evento": "consulta_recibida", "trace_id": "trace-0acb8687", "pregunta_len": 43, "pregunta_huella": "b175e07a600a", "prompt_huella": "81542226d725"}
+{"ts": "2026-11-24T19:41:49", "evento": "documentos_recuperados", "trace_id": "trace-0acb8687", "n": 3, "fuentes": ["doc2", "comentario-ticket-881", "doc1"]}
+{"ts": "2026-11-24T19:41:49", "evento": "documentos_descartados_por_inyeccion", "trace_id": "trace-0acb8687", "n": 1, "fuentes": ["comentario-ticket-881"]}
+{"ts": "2026-11-24T19:41:49", "evento": "consumo_llm", "trace_id": "trace-0acb8687", "simulado": true, "input_tokens": 215, "output_tokens": 30, "total_tokens": 245}
+{"ts": "2026-11-24T19:41:49", "evento": "latencia", "trace_id": "trace-0acb8687", "tiempos_ms": {"recuperacion": 1.67, "generacion": 0.43}, "total_ms": 2.1}
+{"ts": "2026-11-24T19:41:49", "evento": "respuesta_generada", "trace_id": "trace-0acb8687", "respuesta_len": 121, "fuentes": ["doc2"], "revision_humana": true}
+{"ts": "2026-11-24T19:41:49", "evento": "consulta_recibida", "trace_id": "trace-67aa286b", "pregunta_len": 33, "pregunta_huella": "b0d7402f0116", "prompt_huella": "81542226d725"}
+{"ts": "2026-11-24T19:41:49", "evento": "documentos_recuperados", "trace_id": "trace-67aa286b", "n": 3, "fuentes": ["doc5", "doc2", "doc3"]}
+{"ts": "2026-11-24T19:41:49", "evento": "consumo_llm", "trace_id": "trace-67aa286b", "simulado": true, "input_tokens": 239, "output_tokens": 23, "total_tokens": 262}
+{"ts": "2026-11-24T19:41:49", "evento": "latencia", "trace_id": "trace-67aa286b", "tiempos_ms": {"recuperacion": 1.29, "generacion": 0.35}, "total_ms": 1.64}
+{"ts": "2026-11-24T19:41:49", "evento": "respuesta_generada", "trace_id": "trace-67aa286b", "respuesta_len": 95, "fuentes": ["doc5"], "revision_humana": true}
+{"ts": "2026-11-24T19:41:49", "evento": "consulta_recibida", "trace_id": "trace-fbf4c447", "pregunta_len": 46, "pregunta_huella": "6f9950ba25a9", "prompt_huella": "81542226d725"}
+{"ts": "2026-11-24T19:41:49", "evento": "documentos_recuperados", "trace_id": "trace-fbf4c447", "n": 3, "fuentes": ["doc1", "doc9", "resena-web-042"]}
+{"ts": "2026-11-24T19:41:49", "evento": "documentos_descartados_por_inyeccion", "trace_id": "trace-fbf4c447", "n": 1, "fuentes": ["resena-web-042"]}
+{"ts": "2026-11-24T19:41:49", "evento": "consumo_llm", "trace_id": "trace-fbf4c447", "simulado": true, "input_tokens": 202, "output_tokens": 38, "total_tokens": 240}
+{"ts": "2026-11-24T19:41:49", "evento": "latencia", "trace_id": "trace-fbf4c447", "tiempos_ms": {"recuperacion": 1.01, "generacion": 0.27}, "total_ms": 1.28}
+{"ts": "2026-11-24T19:41:49", "evento": "respuesta_generada", "trace_id": "trace-fbf4c447", "respuesta_len": 153, "fuentes": ["doc1"], "revision_humana": true}
+{"ts": "2026-11-24T19:41:49", "evento": "consulta_recibida", "trace_id": "trace-9b5a1db0", "pregunta_len": 34, "pregunta_huella": "3dbbf6980c5c", "prompt_huella": "81542226d725"}
+{"ts": "2026-11-24T19:41:49", "evento": "documentos_recuperados", "trace_id": "trace-9b5a1db0", "n": 1, "fuentes": ["comentario-ticket-881"]}
+{"ts": "2026-11-24T19:41:49", "evento": "documentos_descartados_por_inyeccion", "trace_id": "trace-9b5a1db0", "n": 1, "fuentes": ["comentario-ticket-881"]}
+{"ts": "2026-11-24T19:41:49", "evento": "sin_contexto_confiable", "trace_id": "trace-9b5a1db0", "n_recuperados": 1, "n_descartados": 1}

@@ -1,0 +1,9 @@
+Hola, GATE2:
+
+Ejecuté servicio_rag_02.py
+Se crea carpeta "log" y "vectorstore"
+Copie salida en servicio_rag_02.txt
+
+Todo lo otro fue entregada en cada Bloque XX
+
+Gracias!
