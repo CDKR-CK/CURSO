@@ -1,0 +1,20 @@
+Estimados,
+
+Tengo muy claro que algunos archivos deben estar en docs, pero los copio aquí para tener orden del Bloque 34 y su entrega. Gracias!
+
+
+ENTREGA:
+
+Paso1_ficha_datos_01.py
+Paso2_resumen_ficha_01.py
+Paso2_resumen_ficha_01.txt
+
+verificar_ficha_02.py
+verificar_ficha_completa_01.py
+
+diagrama_arquitectura_01.png
+diagrama_arquitectura_01.md
+ficha_diseno_funcional_04.md
+revision_alcance_01.md
+
+CHOCOLATERIA_01.md

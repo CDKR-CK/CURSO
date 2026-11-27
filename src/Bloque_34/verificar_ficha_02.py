@@ -1,0 +1,146 @@
+import os
+import re
+import sys
+import unicodedata
+from pathlib import Path
+
+# Consola de Windows: forzar UTF-8
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
+CARPETA_SCRIPT = Path(__file__).parent
+RUTA = CARPETA_SCRIPT / "ficha_diseno_funcional_04.md"
+SECCIONES = {
+    1: "problema",
+    2: "requerimientos",
+    3: "arquitectura",
+    4: "criterios",
+    5: "plan",
+}
+MAX_IMPRESCINDIBLES = 5
+PALABRAS_SOLUCION = [
+    "chatbot",
+    "rag",
+    "modelo",
+    "inteligencia artificial",
+    "llm",
+]
+
+
+def normalizar(texto):
+    sin_tildes = unicodedata.normalize("NFD", texto)
+    return "".join(
+        c for c in sin_tildes if unicodedata.category(c) != "Mn"
+    ).lower()
+
+
+def leer_secciones(texto):
+    secciones = {}
+    for bloque in re.split(r"(?m)^## ", texto)[1:]:
+        encabezado, _, cuerpo = bloque.partition("\n")
+        m = re.match(r"(\d)\.", encabezado.strip())
+        if m:
+            secciones[int(m.group(1))] = (
+                normalizar(encabezado),
+                cuerpo.strip(),
+            )
+    return secciones
+
+
+def verificar(texto, carpeta_base="."):
+    errores, avisos = [], []
+    secciones = leer_secciones(texto)
+    for numero, clave in SECCIONES.items():
+        if numero not in secciones or clave not in secciones[numero][0]:
+            errores.append(f"falta la seccion {numero} ({clave})")
+    for numero in (1, 2, 3):
+        if numero in secciones and "[COMPLETAR" in secciones[numero][1]:
+            errores.append(
+                f"la seccion {numero} todavia tiene marcas [COMPLETAR]"
+            )
+    if errores:
+        return errores, avisos
+
+    problema = normalizar(secciones[1][1])
+    for palabra in PALABRAS_SOLUCION:
+        if re.search(rf"\b{palabra}\b", problema):
+            avisos.append(
+                f"el problema menciona la solucion ('{palabra}')"
+            )
+
+    req = secciones[2][1]
+    rf = dict(re.findall(r"(?m)^- (RF-\d{2}): (.+)$", req))
+    rnf = dict(re.findall(r"(?m)^- (RNF-\d{2}): (.+)$", req))
+    if len(rf) < 3:
+        errores.append(f"hay {len(rf)} RF y se piden al menos 3")
+    if len(rnf) < 2:
+        errores.append(f"hay {len(rnf)} RNF y se piden al menos 2")
+    for rid, texto_rnf in rnf.items():
+        if not re.search(r"\d", texto_rnf):
+            errores.append(
+                f"{rid} no tiene ningun numero: no se puede comprobar"
+            )
+
+    cajones = {}
+    for nombre in ("Imprescindible", "Deseable", "Fuera de alcance"):
+        m = re.search(rf"(?m)^{nombre}:\s*(.*)$", req)
+        cajones[nombre] = (
+            re.findall(r"RF-\d{2}", m.group(1)) if m else []
+        )
+        if not m:
+            errores.append(f"falta la linea '{nombre}:' en el alcance")
+    if not cajones["Imprescindible"]:
+        errores.append("el MVP no tiene ningun RF imprescindible")
+    n_imp = len(cajones["Imprescindible"])
+    if n_imp > MAX_IMPRESCINDIBLES:
+        errores.append(
+            f"el MVP tiene {n_imp} imprescindibles "
+            f"(maximo orientativo: {MAX_IMPRESCINDIBLES})"
+        )
+    clasificados = [r for lista in cajones.values() for r in lista]
+    for rid in clasificados:
+        if rid not in rf:
+            errores.append(
+                f"{rid} aparece en el alcance pero no esta definido"
+            )
+    for rid in rf:
+        veces = clasificados.count(rid)
+        if veces != 1:
+            errores.append(
+                f"{rid} debe estar en exactamente un cajon "
+                f"(esta en {veces})"
+            )
+
+    arquitectura = secciones[3][1]
+    # Acepta la línea "Diagrama: <ruta>" con una imagen o un Markdown (Mermaid)
+    imagenes = re.findall(
+        r"(?m)^Diagrama:\s*(\S+\.(?:png|jpg|jpeg|md))\s*$", arquitectura
+    )
+    if not imagenes:
+        errores.append(
+            "la seccion 3 no tiene la linea 'Diagrama: <ruta>' "
+            "(.png, .jpg, .jpeg o .md)"
+        )
+    for ruta in imagenes:
+        if not os.path.exists(os.path.join(carpeta_base, ruta)):
+            errores.append(
+                f"el diagrama {ruta} no existe en el repositorio"
+            )
+    return errores, avisos
+
+
+if __name__ == "__main__":
+    ruta = Path(sys.argv[1]) if len(sys.argv) > 1 else RUTA
+    if not ruta.exists():
+        sys.exit(f"No existe {ruta}. Revisa la ruta de la ficha.")
+    with open(ruta, encoding="utf-8") as archivo:
+        errores, avisos = verificar(archivo.read(), ruta.parent)
+    print(f"Ficha: {ruta.name}")
+    for aviso in avisos:
+        print("AVISO:", aviso)
+    for error in errores:
+        print("ERROR:", error)
+    if errores:
+        print(f"\n{len(errores)} problema(s) por resolver")
+        sys.exit(1)
+    print("Ficha verificada: secciones 1 a 3 completas")

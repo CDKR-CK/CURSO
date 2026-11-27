@@ -1,0 +1,10 @@
+CONSOLA:
+
+Ficha: ficha_diseno_funcional_04.md
+RF: 9 | RNF: 5
+Alcance: imprescindibles 4, deseables 2, fuera de alcance 3
+Criterios de aceptacion: 12
+Imprescindibles y RNF sin criterio: ninguno
+Hitos: 5 | Horas planificadas: 9.6 h de 9.6 h posibles (12.0 h menos 2.4 h de margen)
+Criterios que ningun hito comprueba: ninguno
+Hitos sin criterio: ninguno
