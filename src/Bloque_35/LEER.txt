@@ -1,0 +1,22 @@
+Estimados,
+
+Bloque 35: servicio FastAPI de la CHOCOLATERIA CK (hito H1 de la ficha del Bloque 34),
+con datos simulados del corpus doc1 a doc10. Todos los comandos se ejecutan desde esta carpeta.
+
+Arranque:      uvicorn servicio.main:app --reload
+Documentacion: http://127.0.0.1:8000/docs
+Verificacion:  python verificar_servicio.py
+
+
+ENTREGA:
+
+servicio/__init__.py
+servicio/esquemas.py
+servicio/logica.py
+servicio/main.py
+
+verificar_servicio.py
+
+requirements.txt (en la raiz del repositorio)
+
+Gracias!
